@@ -1,13 +1,21 @@
 {
-  "name": "colorsurvey",
+  "name": "lab6",
   "version": "1.0.0",
-  "description": "A survey on color preference",
+  "description": "this is SEG3525 lab 6",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test"
   },
-  "author": "Caroline Barrière",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chedlyrdissi/SEG3525_act6.git"
+  },
+  "author": "Chedli Redissi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chedlyrdissi/SEG3525_act6/issues"
+  },
+  "homepage": "https://github.com/chedlyrdissi/SEG3525_act6#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.1.3",

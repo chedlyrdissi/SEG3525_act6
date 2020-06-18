@@ -1,3 +1,4 @@
+// jQuery that will "listen" to the html niceSurvey.html
 $(document).ready(function(){
 
   $('form').on('submit', function(){
@@ -7,19 +8,16 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: '/survey',
-        // data: this,
+        url: '/niceSurvey',
         data: $(this).serializeArray(),
         success: function(data){
           // do something with the data via front-end framework
           // Make the submit button red, disabled and saying Thank you
-          $("input[type='Submit']").hide();
-          $("#successMsg").show();
+          $("#bb").css("background-color", "red");
+          $("#bb").prop("disabled", "true");
+          $("#bb").text("Thank you!");
         }
       });
       return false;
   });
-
-  $("input[type='Submit']").show();
-  $("#successMsg").hide();
 });

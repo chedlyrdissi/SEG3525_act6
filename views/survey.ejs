@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey</title>
+		<link rel="stylesheet" href="/assets/styles/stylesheet.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>   
+		
+		<script type="text/javascript">
+
+			const link = 'http://www.arngren.net/';
+
+			function goToLink() {
+				window.location = link;
+			}
+
+			$(document).ready(function(){
+				$("input[type='checkbox']").addClass('iconic');
+				$("input[type='radio']").addClass('iconic');
+			});
+		</script>
+		<script src="/assets/action.js"></script>
+		<script src="/assets/btnControl.js"></script>
+	</head>
+	<body >
+		<section id="gallery" class="centered">
+				<div>
+					<h1>Survey about <a href="#" onclick="goToLink()" class="title">arngren</a></h1>
+				</div>
+
+				<div class="container justify-content-center" style="text-align: -webkit-center;">
+					<div id="mainCatalog" class="carousel slide" data-ride="carousel">
+						<ul class="carousel-indicators">							    
+						    <% for( let i = 0; i < src.length; i++) { %>
+							    <li class="<%=(i===0)?'active':''%>" data-target="#mainCatalog" data-slide-to="<%= i %>"></li>
+							<% } %>
+						</ul>
+
+						<div class="carousel-inner large">
+						
+						    <% for( let i = 0; i < src.length; i++) { %>
+							    <div class="carousel-item <%= ( i === 0 )? 'active': '' %>" >
+							      <img src="<%= src[i] %>" alt="">
+							    </div>
+						    <% } %>
+						  
+						  	<a class="carousel-control-prev" href="#mainCatalog" data-slide="prev">
+						    	<span class="carousel-control-prev-icon"></span>
+						  	</a>
+						  	<a class="carousel-control-next" href="#mainCatalog" data-slide="next">
+						    	<span class="carousel-control-next-icon"></span>
+						  	</a>
+						</div>
+					</div>
+				</div>
+		</section>
+		<form action="" method="POST" name="Survey">
+			<section>	
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink();" class="image">
+								<img id="q1Image" class="huge" alt="arngren" src="https://webshots.websitesfromhell.net/80b60ba39c7377812aabbeb905a5da2e/s_848.jpg" title = "if you click here you will be redirected to the arngren home page">
+							</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									<label>Le UI design du site est non utilisable car  </label>
+									<input type="text" name="1"/>
+									<br/>
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ1">
+												<img src="https://image.flaticon.com/icons/png/512/25/25663.png" title="please click here to add a comment on this question" class="tiny" />
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ1" class="collapse">
+												<textarea name="Q1 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink()" class="image">
+								<img id="q2Image" class="huge" src="/assets/images/search.jpg" title="if you click here you will be redirected to the arngren home page">
+							</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									<div class="container">
+										<div class="row">
+											La recherche dans ce site est
+										</div>
+										<div class="row" state="checkbox">
+											<div class="col-1">
+												<input type="checkbox" name="2" value="fiable: le cite donne tout article qui contient les mots dans la zone de recherche" />	
+											</div>
+											<div class="col-11">												
+												fiable: le cite donne tout article qui contient les mots dans la zone de recherche
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-1">
+												<input type="checkbox" name="2" value="efficase: le site n'ordonne pas les elements par evaluation/prix ..." /> 	
+											</div>
+											<div class="col-11">												
+												efficase: le site n'ordonne pas les elements par evaluation/prix ...
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-1">
+												<input type="checkbox" name="2" value="utilisable: l'emplacement de la zone de recherche est intuitive mais difficile a voir a cause des articles" /> 	
+											</div>
+											<div class="col-11">												
+												utilisable: l'emplacement de la zone de recherche est intuitive mais difficile a voir a cause des articles
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-1">
+												<input type="checkbox" name="2" value="fonctionalite correcte: le site effecture une recherche" /> 	
+											</div>
+											<div class="col-11">												
+												fonctionalite correcte: le site effecture une recherche
+											</div>
+										</div>
+									</div>
+						
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ2">
+												<img src="https://image.flaticon.com/icons/png/512/25/25663.png" title="please click here to add a comment on this question" class="tiny" />
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ2" class="collapse">
+												<textarea name="Q2 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink()" class="image">
+							<img id="q3Image" class="huge" src="https://webshots.websitesfromhell.net/80b60ba39c7377812aabbeb905a5da2e/s_848.jpg" alt="arngren" title="if you click here you will be redirected to the arngren home page">
+						</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									<div class="container">
+										<div class="row">
+											Placer tout les articles dans la page principale rend the site efficase:
+										</div>
+										<div class="row" state="radio">											
+											<input type="radio" name="3" value="true">Vrai<br/>
+										</div>
+										<div class="row" state="radio">
+											<input type="radio" name="3" value="false">Faux<br/>
+										</div>
+									</div>
+									<br/>
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ3">
+												<img class="tiny"src="https://image.flaticon.com/icons/png/512/25/25663.png" title="please click here to add a comment on this question"/>
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ3" class="collapse">
+												<textarea name="Q3 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink()" class="image">
+								<img id = "q4Image" class="huge" alt="arngren" src="https://webshots.websitesfromhell.net/80b60ba39c7377812aabbeb905a5da2e/s_848.jpg" title="if you click here you will be redirected to the arngren home page">
+							</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									Le site n'utilise pas une grille specifique, on place des photos partout, comment évaluez-vous la coherence du UI
+									<table>
+										<tr>
+											<th>totally insatisfied</th>
+											<th>not satisfied</th>
+											<th>neutral</th>
+											<th>satisfied</th>
+											<th>totally satisfied</th>
+										</tr>
+										<tr>
+											<td state="radio"><input type="radio" name="4" value="totally insatisfied"></td>
+											<td state="radio"><input type="radio" name="4" value="not satisfied"></td>
+											<td state="radio"><input type="radio" name="4" value="neutral"></td>
+											<td state="radio"><input type="radio" name="4" value="satisfied"></td>
+											<td state="radio"><input type="radio" name="4" value="totally satisfied"></td>
+
+										</tr>
+									</table>
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ4">
+												<img class="tiny" title="please click here to add a comment on this question"	src="https://image.flaticon.com/icons/png/512/25/25663.png"/>
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ4" class="collapse">
+												<textarea name="Q4 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink()" class="image">
+								<img id="q5Image" class="huge" alt="arngren" src="/assets/images/comp.jpg" title="if you click here you will be redirected to the arngren home page">
+							</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									placer les articles sans les categoriser rend la recherche 
+									<select name="5">
+										<option value="efficace">efficace</option>
+										<option value="non efficace">non efficace</option>
+									</select>
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ5">
+												<img class="tiny" title="please click here to add a comment on this question" src="https://image.flaticon.com/icons/png/512/25/25663.png"/>
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ5" class="collapse">
+												<textarea name="Q5 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="container border corner m-3">
+					<div class="row">
+						<div class="col-6 image-column">
+							<a href="#" onclick="goToLink()" class="image">
+								<img id="q6Image" class="huge" alt="arngren" src="https://webshots.websitesfromhell.net/80b60ba39c7377812aabbeb905a5da2e/s_848.jpg" title="if you click here you will be redirected to the arngren home page">
+							</a>
+						</div>
+						<div class="col-6">
+							<div class="container container-row">
+								<div class="row top-row">
+									<label>chaque article utilise une langue ce qui rend le cite </label>
+									<input type="text" name="6"/>
+								</div>
+								<div class="row bottom-row">
+									<div class="container">
+										<div class="row">
+											<a data-toggle="collapse" data-target="#collapseQ6">
+												<img class="tiny" src="https://image.flaticon.com/icons/png/512/25/25663.png" title="please click here to add a comment on this question"/>
+												If you have a comment please input it here
+											</a>
+										</div>
+										<div class="row">
+											<div id="collapseQ6" class="collapse">
+												<textarea name="Q6 comment" class="comment"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="centered lower">
+					<input type="Submit" class="border corner transparent btn btn-outline-primary">
+					<p id="successMsg" class="alert alert-success">Thank you for taking our survey</p>
+				</div>			
+			</section>
+			<footer>
+				<div class="container">
+					<div class="row">						
+						This is the global comment section:
+					</div>
+					<div class="row">
+						<textarea name="global comment" class="comment"></textarea>						
+					</div>
+					<div class="row commentSection">						
+						Site Web conçu par Chedli Redissi 300074863.
+					</div>
+				</div>
+			</footer>	
+		</form>
+	</body>
+</html>

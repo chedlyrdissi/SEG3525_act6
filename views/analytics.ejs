@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- pie char code inspired by https://www.anychart.com/blog/2017/12/06/pie-chart-create-javascript/ -->
+	<title>Analytics</title>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
+</head>
+<body>
+	
+	<h1>Survey analysis</h1>
+    <% if( results ) { %>
+    	<% for (let d of results) { %>
+            <% if( d.data.length > 0 ) {%>
+    			<h2> <%= d.name %> </h2>
+    			<ul>
+				<% for( let da of d.data ) {%>
+					<li> <%= da.name %> : <%= da.count %> </li>
+				<%}%>
+    			</ul>
+            <%}%>
+    	<% } %>
+        <div class="container" id="pieChartContainer">
+            
+        </div>
+    <% } else { %>
+    	No data to show
+    <%}%>
+
+    <script type="text/javascript">
+        // anychart.onDocumentReady(function() {
+
+        //     for(let p of <%=pie%>) {
+        //         console.log(p);
+        //     }
+        //     let pie = <%=pie%>;
+        //     console.log(pie);
+        //     if ( pie ) {   
+        //         console.log("in pie");        
+        //         // create the chart
+        //         var chart = anychart.pie();
+
+        //         // set the chart title
+        //         chart.title("Q3 pie chart");
+
+        //         // add the data
+        //         chart.data(pie);
+
+        //         // display the chart in the container
+        //         chart.container('pieChartContainer');
+
+        //         // set legend position
+        //         chart.legend().position("right");
+        //         // set items layout
+        //         chart.legend().itemsLayout("vertical");
+
+        //         chart.draw();
+        //     }
+        // });
+    </script>
+</body>
+</html>
